@@ -1,6 +1,6 @@
 # YamDB CI/CD
 
-![example workflow](https://github.com/isBlueTip/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
+![yamdb workflow](https://github.com/isBlueTip/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
 ## Описание
 
@@ -28,9 +28,6 @@ DB_HOST=db
 DB_PORT=5432
 SECRET_KEY=p&l%385148kslhtyn^##a1)ilzsdf8s6@4zqs&dfsdfsdf-sdfsd+dfq=l^##zgl9(vs
 ```
-## Документация API
-
-Доступна по адресу /redoc при развёрнутом проекте
 
 ## Стек
 
