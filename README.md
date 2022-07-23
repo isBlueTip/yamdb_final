@@ -14,8 +14,8 @@ DOCKER_USERNAME - логин docker hub
 DOCKER_PASSWORD - пароль docker hub
 HOST - IP удалённого сервера
 USER - username удалённого сервера
-SSH_KEY - пароль для указанного username
-PASSPHRASE - пароль ssh
+SSH_KEY - приватный ключ ssh
+PASSPHRASE - локальный пароль для доступа к ssh
 ```
 
 ## Пример .env файла
