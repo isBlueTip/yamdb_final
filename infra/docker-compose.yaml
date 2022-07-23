@@ -9,7 +9,7 @@ services:
       - ./.env
   web:
     build:
-#      context: ../
+      context: ../dev/
       dockerfile: ../api_yamdb/Dockerfile
     restart: always
     volumes:
