@@ -21,9 +21,9 @@ jobs:
 
     - name: Test with flake8 and django tests
       run: |
-        # запуск проверки проекта по flake8
+#        запуск проверки проекта по flake8
         python3 -m flake8
-        cd infra_project
+#        cd api_yamdb
         python3 manage.py test
   build_and_push_to_docker_hub:
     name: Push Docker image to Docker Hub
