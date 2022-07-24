@@ -55,6 +55,7 @@ jobs:
             passphrase: ${{ secrets.PASSPHRASE }}
             script: |
               sudo docker-compose down
+              sudo docker image rm ${{ secrets.USER }}_web_1
               sudo docker-compose rm web
               touch .env
               echo DB_ENGINE=${{ secrets.DB_ENGINE }} >> .env
