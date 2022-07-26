@@ -22,8 +22,8 @@ jobs:
 
       - name: test with flake8 and pytest
         run: |
+          python3 -m pytest
           python3 -m flake8
-          pytest
 
   build_and_push_to_docker_hub:
     runs-on: ubuntu-latest
