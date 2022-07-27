@@ -9,7 +9,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['51.250.103.207',
                  'localhost',
-                 'yetanotheryatube.onthewifi.com/',
+                 'www.yetanotheryatube.onthewifi.com',
                  ]
 
 
