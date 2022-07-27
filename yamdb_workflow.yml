@@ -62,6 +62,8 @@ jobs:
             script: |
               sudo docker-compose down
               sudo docker image rm isbluetip/yamdb_final
+              sudo docker image rm postgres:13.0-alpine
+              sudo docker image rm nginx:1.21.3-alpine
               touch .env
               echo DB_ENGINE=${{ secrets.DB_ENGINE }} >> .env
               echo DB_NAME=${{ secrets.DB_NAME }} >> .env
@@ -69,7 +71,8 @@ jobs:
               echo POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }} >> .env
               echo DB_HOST=${{ secrets.DB_HOST }} >> .env
               echo DB_PORT=${{ secrets.DB_PORT }} >> .env
-              sudo docker-compose up -d
+              sudo docker-compose pull
+              sudo docker-compose up --build -d
               sudo docker exec ${{ secrets.USER }}_web_1 python3 manage.py makemigrations
               sudo docker exec ${{ secrets.USER }}_web_1 python3 manage.py migrate
               sudo docker exec ${{ secrets.USER }}_web_1 python3 manage.py collectstatic --noinput
