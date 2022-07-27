@@ -7,7 +7,10 @@ SECRET_KEY = os.getenv('SECRET_KEY', default="p&l%slhtyn^##a1)ilz@4zqj=rq&agdol^
 
 DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ['51.250.103.207',
+                 'localhost',
+                 'yetanotheryatube.onthewifi.com/',
+                 ]
 
 
 INSTALLED_APPS = [
