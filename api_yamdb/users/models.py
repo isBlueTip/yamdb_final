@@ -29,7 +29,7 @@ class User(AbstractUser):
         choices=USER_ROLES,
         default=USER
     )
-    confirmation_code = models.CharField(max_length=8)
+    confirmation_code = models.CharField(max_length=32)
 
     class Meta:
         ordering = ["-id"]
