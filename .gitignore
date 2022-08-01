@@ -128,7 +128,7 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# Папки, создаваемые средой разработки
+# IDE folders
 .idea
 .DS_Store
 .AppleDouble
@@ -145,8 +145,6 @@ dmypy.json
 
 .mypy_cache
 
-# папки со статикой и медиа
+# Static and Media Files
 static/
-posts/static/
 media/
-
