@@ -11,7 +11,6 @@ services:
     image: isbluetip/yamdb_final:latest
     restart: always
     volumes:
-      - data_value:/app/
       - static_value:/app/static/
       - media_value:/app/media/
     depends_on:
