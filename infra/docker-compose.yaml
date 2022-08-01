@@ -24,8 +24,8 @@ services:
     volumes:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
 
-      - static_value:~/volume/static/
-      - media_value:~/volume/media/
+      - static_value:/home/volume/static/
+      - media_value:/home/volume/media/
 
     depends_on:
       - web
