@@ -4,7 +4,7 @@
 
 ## Описание
 
-Проект по контейнеризации и автоматическому деплою YamDB с использованием Docker-compose, Nginx и Gunicorn. Новый коммит, запушенный на github, автоматически тестируется на соответствие PEP8 и проходит тесты. В случае успеха, новый код упаковывается в docker-образ, отправляется на docker hub, а затем автоматически скачивается и разворачивается удалённым сервером. Развёрнутый проект доступен по aдресу [www.yetanotheryatube.onthewifi.com](yetanotheryatube.onthewifi.com), документация - по [www.yetanotheryatube.onthewifi.com/redoc](yetanotheryatube.onthewifi.com/redoc)
+Проект по контейнеризации и автоматическому деплою YamDB с использованием Docker-compose, Nginx и Gunicorn. Новый коммит, запушенный на github, автоматически тестируется на соответствие PEP8 и проходит тесты. В случае успеха, новый код упаковывается в docker-образ, отправляется на docker hub, а затем автоматически скачивается и разворачивается удалённым сервером. Развёрнутый проект доступен по aдресу [www.yetanotheryatube.onthewifi.com/api/v1](http://yetanotheryatube.onthewifi.com/api/v1), документация - по [www.yetanotheryatube.onthewifi.com/redoc](http://yetanotheryatube.onthewifi.com/redoc)
 
 [comment]: <> (## Установка проекта локально)
 
@@ -50,14 +50,23 @@
 
 ## Установка проекта на удалённый сервер
 
-Необходимо создать форк репозитория и клонировать его на локальную машину. Заполнить github secrets. Далее приведён список переменных окружения github:
+Необходимо создать форк репозитория и клонировать его на локальную машину. Заполнить github secrets. Далее приведён список необходимых переменных окружения github:
 ```
-DOCKER_USERNAME - логин docker hub
-DOCKER_PASSWORD - пароль docker hub
-HOST - IP удалённого сервера
-USER - username удалённого сервера
-SSH_KEY - приватный ключ ssh
-PASSPHRASE - локальный пароль для доступа к ssh
+DB_ENGINE           - django.db.backends.postgresql
+DB_HOST             - db
+DB_NAME             - postgres
+DB_PORT             - 5432
+DOCKER_USERNAME     - логин docker hub
+DOCKER_PASSWORD     - пароль docker hub
+HOST                - IP удалённого сервера
+USER                - username удалённого сервера
+PASSPHRASE          - локальный пароль для доступа к ssh
+SSH_KEY             - приватный ключ ssh
+POSTGRES_PASSWORD   - логин docker hub
+POSTGRES_USER       - имя пользователя для доступа к БД
+SECRET_KEY          - код безопасности django-проекта
+TELEGRAM_TO         - токен пользователя telegram
+TELEGRAM_TOKEN      - токен бота telegram
 ```
 
 Копировать файлы на сервер:
@@ -85,8 +94,7 @@ Django, Django REST framework, Github Actions, Docker, JWT, Postgres, Nginx, Gun
 
 ## Автор
 
-Семён Егоров  
-
+Семён Егоров
 
 [LinkedIn](https://www.linkedin.com/in/simonegorov/)  
 [Email](rhinorofl@gmail.com)  
