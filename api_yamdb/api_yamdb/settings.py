@@ -14,6 +14,7 @@ ALLOWED_HOSTS = [
     # 'www.yetanotheryatube.onthewifi.com',
 ]
 
+
 INSTALLED_APPS = [
     # Django
     "django.contrib.admin",
