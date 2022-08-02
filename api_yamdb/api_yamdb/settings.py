@@ -47,7 +47,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "api_yamdb.urls"
 # PREPEND_WWW = True  # TODO try this later
-APPEND_SLASH = True  # TODO works for GET, 200 for POST without /
+APPEND_SLASH = False  # TODO works for GET, 200 for POST without /
 
 TEMPLATES_DIR = os.path.join(BASE_DIR, "templates")
 TEMPLATES = [
