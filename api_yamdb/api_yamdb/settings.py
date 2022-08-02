@@ -5,7 +5,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = os.getenv('SECRET_KEY', default="p&l%slhtyn^##a1)ilz@4zqj=rq&agdol^##zgl9(vs")
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     '*',
@@ -46,7 +46,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "api_yamdb.urls"
-PREPEND_WWW = True  # TODO try this later
+# PREPEND_WWW = True  # TODO try this later
 APPEND_SLASH = True  # TODO works for GET, 200 for POST without /
 
 TEMPLATES_DIR = os.path.join(BASE_DIR, "templates")
