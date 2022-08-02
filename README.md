@@ -6,48 +6,6 @@
 
 Проект по контейнеризации и автоматическому деплою YamDB с использованием Docker-compose, Nginx и Gunicorn. Новый коммит, запушенный на github, автоматически тестируется на соответствие PEP8 и проходит тесты. В случае успеха, новый код упаковывается в docker-образ, отправляется на docker hub, а затем автоматически скачивается и разворачивается удалённым сервером. Развёрнутый проект доступен по aдресу [www.yetanotheryatube.onthewifi.com/api/v1](http://yetanotheryatube.onthewifi.com/api/v1), документация - по [www.yetanotheryatube.onthewifi.com/redoc](http://yetanotheryatube.onthewifi.com/redoc)
 
-[comment]: <> (## Установка проекта локально)
-
-[comment]: <> (Необходимо создать форк репозитория и клонировать его на локальную машину. Для корректной работы, в папке `infra` необходимо создать файл .env с локальными переменными окружения, например:)
-
-[comment]: <> (```)
-
-[comment]: <> (DB_ENGINE=django.db.backends.postgresql)
-
-[comment]: <> (DB_NAME=postgres)
-
-[comment]: <> (POSTGRES_USER=postgres)
-
-[comment]: <> (POSTGRES_PASSWORD=root)
-
-[comment]: <> (DB_HOST=db)
-
-[comment]: <> (DB_PORT=5432)
-
-[comment]: <> (SECRET_KEY=?5FXk"ncyRbP#a<n94't%V&#40;&t_UmC`N9rC$7iW&#41;m#'ZUSak<5-#XoWX}N)
-
-[comment]: <> (```)
-
-[comment]: <> (Выполнить установку виртуального окружения и зависимостей:)
-
-[comment]: <> (```bash)
-
-[comment]: <> (python3 -m venv venv)
-
-[comment]: <> (source venv/bin/activate)
-
-[comment]: <> (pip install -r api_yamdb/requirements.txt)
-
-[comment]: <> (```)
-
-[comment]: <> (Далее, из папки `infra` выполнить:)
-
-[comment]: <> (```bash)
-
-[comment]: <> (docker-compose up --build -d)
-
-[comment]: <> (```)
-
 ## Установка проекта на удалённый сервер
 
 Необходимо создать форк репозитория и клонировать его на локальную машину. Заполнить github secrets. Далее приведён список необходимых переменных окружения github:
@@ -71,7 +29,7 @@ TELEGRAM_TOKEN      - токен бота telegram
 
 Копировать файлы на сервер:
 ```bash
-scp infra/docker-compose.yaml <HOST_USERNAME>@<HOST_IP>:~
+scp -r docker-compose.yaml nginx/ <HOST_USERNAME>@<HOST_IP>:~
 ```
 Где HOST_USERNAME - имя пользователя на удалённом сервере,
 HOST_IP - IP-адрес сервера
