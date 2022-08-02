@@ -1,7 +1,7 @@
 from api.reviews_views import CommentViewSet, ReviewViewSet
 from api.titles_views import CategoryViewSet, GenreViewSet, TitleViewSet
 from api.users_views import SignupView, TokenView, UserViewSet
-from django.urls import include, path
+from django.urls import include, path, re_path
 from api.utils import OptionalSlashRouter
 
 
@@ -18,7 +18,9 @@ router.register(
     CommentViewSet, basename="comment")
 
 urlpatterns = [
-    path("v1/auth/signup/", SignupView.as_view(), name="request_confirmation"),
-    path("v1/auth/token/", TokenView.as_view(), name="obtain_token"),
+    re_path(r"^v1/auth/signup/?",
+            SignupView.as_view(),
+            name="request_confirmation"),
+    re_path(r"^v1/auth/token/?", TokenView.as_view(), name="obtain_token"),
     path("v1/", include(router.urls)),
 ]
