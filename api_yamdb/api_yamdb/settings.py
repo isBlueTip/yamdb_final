@@ -47,7 +47,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "api_yamdb.urls"
 # PREPEND_WWW = True TODO try this later
-APPEND_SLASH = False
+APPEND_SLASH = True
 
 TEMPLATES_DIR = os.path.join(BASE_DIR, "templates")
 TEMPLATES = [
