@@ -6,7 +6,7 @@ from drf_yasg.views import get_schema_view
 from rest_framework import permissions
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/?', admin.site.urls),
     path('api/', include('api.urls')),
 ]
 
@@ -24,6 +24,5 @@ schema_view = get_schema_view(
 
 urlpatterns += [
     url(r'^redoc/?$', schema_view.with_ui('redoc', cache_timeout=0),
-    # url(r'^\/redoc((\/\w+)+|\/?)$', schema_view.with_ui('redoc', cache_timeout=0),
         name='schema-redoc'),
 ]
