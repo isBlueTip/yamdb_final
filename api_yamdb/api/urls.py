@@ -4,7 +4,8 @@ from api.users_views import SignupView, TokenView, UserViewSet
 from django.urls import include, path
 from rest_framework.routers import SimpleRouter
 
-router = SimpleRouter(trailing_slash=False)
+router = SimpleRouter()
+# router = SimpleRouter(trailing_slash=False) TODO delete comment
 router.register("users", UserViewSet, basename="user")
 router.register("categories", CategoryViewSet, basename="category")
 router.register("genres", GenreViewSet, basename="genre")
