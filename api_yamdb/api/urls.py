@@ -4,8 +4,18 @@ from api.users_views import SignupView, TokenView, UserViewSet
 from django.urls import include, path
 from rest_framework.routers import SimpleRouter
 
-# router = SimpleRouter()
-router = SimpleRouter(trailing_slash=True)  # TODO delete comment
+# from rest_framework.routers import SimpleRouter
+
+
+class OptionalSlashRouter(SimpleRouter):
+
+    def __init__(self):
+        super().__init__()
+        self.trailing_slash = '/?'
+
+
+router = OptionalSlashRouter()
+# router = SimpleRouter(trailing_slash=True)  # TODO delete comment
 router.register("users", UserViewSet, basename="user")
 router.register("categories", CategoryViewSet, basename="category")
 router.register("genres", GenreViewSet, basename="genre")
