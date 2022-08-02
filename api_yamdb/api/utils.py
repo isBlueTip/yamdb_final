@@ -3,9 +3,17 @@ import uuid
 from django.core.mail import send_mail
 from django.core.validators import MaxValueValidator
 from django.utils import timezone
+from rest_framework.routers import SimpleRouter
 from rest_framework_simplejwt.tokens import RefreshToken
 
 from api_yamdb.settings import ADMIN_EMAIL
+
+
+class OptionalSlashRouter(SimpleRouter):
+
+    def __init__(self):
+        super().__init__()
+        self.trailing_slash = '/?'
 
 
 def send_otp(email):
