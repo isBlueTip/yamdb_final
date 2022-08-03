@@ -1,13 +1,13 @@
-from django.db.models import Avg
-from django_filters.rest_framework import DjangoFilterBackend
-from rest_framework import filters, viewsets
-from titles.models import Category, Genre, Title
 
 from api.filters import TitleFilter
 from api.permissions import IsAdminOrReadOnly
 from api.titles_mixins import CreateListDestroyViewSet
 from api.titles_serializers import (CategorySerializer, GenreSerializer,
                                     TitlePostSerializer, TitleSerializer)
+from django.db.models import Avg
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework import filters, viewsets
+from titles.models import Category, Genre, Title
 
 
 class CategoryViewSet(CreateListDestroyViewSet, viewsets.GenericViewSet):

@@ -1,9 +1,8 @@
-from django.urls import include, path, re_path
-
 from api.reviews_views import CommentViewSet, ReviewViewSet
 from api.titles_views import CategoryViewSet, GenreViewSet, TitleViewSet
 from api.users_views import SignupView, TokenView, UserViewSet
 from api.utils import OptionalSlashRouter
+from django.urls import include, path, re_path
 
 router = OptionalSlashRouter()
 router.register("users", UserViewSet, basename="user")
