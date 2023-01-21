@@ -55,5 +55,5 @@ Django, Django REST framework, Github Actions, Docker, JWT, Postgres, Nginx, Gun
 Семён Егоров
 
 [LinkedIn](https://www.linkedin.com/in/simonegorov/)  
-[Email](rhinorofl@gmail.com)  
+[Email](simon.egorov.job@gmail.com)  
 [Telegram](https://t.me/SamePersoon)
